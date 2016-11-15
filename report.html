@@ -1,0 +1,51 @@
+<div id="d">
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>  
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+  
+        <br />  
+        <br />  
+        <script type='text/javascript'>  
+                    google.load('visualization', '1', {packages: ['corechart']});</script>  
+  
+                    <script type='text/javascript'>  
+                    function drawVisualization() {         
+                    var TotalTestNumber_data = google.visualization.arrayToDataTable([  
+                    ['Date', 'TotalTestNumber'],['11/9/2016 1:41:44 PM',8],['11/9/2016 1:57:22 PM',11],['11/9/2016 2:00:59 PM',8],['11/9/2016 2:02:11 PM',3],['11/9/2016 2:03:55 PM',6],['11/9/2016 2:05:38 PM',6],['11/9/2016 2:06:54 PM',6],['11/9/2016 2:08:14 PM',6],['11/9/2016 2:10:03 PM',6],['11/9/2016 2:12:29 PM',2],['11/9/2016 2:14:33 PM',2],['11/9/2016 2:15:27 PM',2],['11/9/2016 2:30:42 PM',1],['11/9/2016 2:33:18 PM',2],['11/9/2016 2:34:26 PM',1],['11/9/2016 2:36:16 PM',4],['11/9/2016 2:37:03 PM',8],['11/9/2016 2:37:39 PM',3],['11/9/2016 2:39:20 PM',2],['11/9/2016 2:42:09 PM',2],['11/9/2016 2:43:33 PM',1],['11/9/2016 2:44:49 PM',1],['11/9/2016 2:45:51 PM',1],['11/9/2016 2:48:34 PM',1],['11/9/2016 2:54:11 PM',2]]);var options = { title : 'Total number of tests by date', vAxis: {title: 'TotalTestNumber'},  hAxis: {title: 'Date'}}; var chart = new google.visualization.AreaChart(document.getElementById('TotalTestNumber_chart_div'));  chart.draw(TotalTestNumber_data, options); } google.setOnLoadCallback(drawVisualization); </script>    
+        <script type='text/javascript'>  
+                    google.load('visualization', '1', {packages: ['corechart', 'bar']});</script>
+  
+                    <script type='text/javascript'>  
+                    function drawChart() {         
+                    var TestMethodName_data = google.visualization.arrayToDataTable([['TestName', 'NumberOfPassedTest', 'NumberOfFailedTest'],['BasicRecalculateRatingAltitudeChanged',100,0],['BasicRecalculateRatingAltitudeNotChanged',100,0],['BasicRecalculateRatingExcludeAltitudeForAllHole',100,0],['BasicRecalculateRatingExcludeAltitudeForSomeHole',100,0],['BasicRecalculateRatingWindAdjustmetsBack',100,0],['BasicRecalculateRatingWindAdjustmetsFront',100,0],['CreateRating18HolesFemale',100,0],['CreateRating18HolesMale',100,0],['CreateRating9HolesFemale',100,0],['CreateRating9HolesMale',100,0],['CreateRatingShourtHolesFemale',100,0],['CreateRatingShourtHolesMale',100,0],['FacilityWithDiffAssociations1',66,33],['FacilityWithDiffAssociations2',66,33],['GHIN2CRS3003',66,33],['GlobalRecalculateRating',100,0],['HoleIsDeleted',100,0],['NegativeTestsForSubAdminRole',100,0],['NegativeTestsForUSGAReadOnlyAdminRole',100,0],['RecalculateRatingFemale',100,0],['RecalculateRatingMale',100,0],['SearchByAssociation',100,0],['SearchByAssociationName',100,0],['SearchByAssociationNameLower',100,0],['SearchByAssociationNameUpper',100,0],['SearchByAssociationNegative',100,0],['SearchFacility',100,0],['SearchFacilityFilterCity',100,0],['SearchFacilityName',100,0],['SearchInFacilityByAssociation',100,0],['SearchInFacilityByAssociationName',100,0],['SearchInFacilityByAssociationNegative',100,0],['SharedFacilityUpdateCourseAccept',100,0],['SharedFacilityUpdateCourseReject',100,0],['SharedFacilityUpdateCourseWindAdjustmetsBackReject',100,0],['SRGAReadOnlyPrivate',100,0],['SRGAReadOnlyPublic',100,0],['TeeBoxIsDeleted',100,0],['TeeHoleBecameIncomplete',100,0],['TeeHoleUnlinked',100,0],['TeeHoleUnlinkedReplace',100,0],['TeeSetUpdate',100,0],['UpdateFacility',66,33],['Verify18HolesFemaleInactiveToPublishTest',100,0],['Verify18HolesFemalePendingToPublish',100,0],['Verify18HolesFemalePublishToFutureTest',100,0],['Verify18HolesFemalePublishToInactive',100,0],['Verify18HolesMaleInactiveToPublishTest',100,0],['Verify18HolesMalePendingToPublish',100,0],['Verify18HolesMalePublishToFutureTest',100,0],['Verify18HolesMalePublishToInactive',100,0],['Verify9HolesFemaleInactiveToPublishTest',100,0],['Verify9HolesFemalePendingToPublish',100,0],['Verify9HolesFemalePublishToFutureTest',100,0],['Verify9HolesFemalePublishToInactive',100,0],['Verify9HolesMaleInactiveToPublishTest',100,0],['Verify9HolesMalePendingToPublish',100,0],['Verify9HolesMalePublishToFutureTest',100,0],['Verify9HolesMalePublishToInactive',100,0],['VerifyHistoricalSnapshot',100,0],['VerifyHistoricalSnapshotCourse',100,0],['VerifyHistoricalSnapshotHole',100,0],['VerifyShortCourseFemaleInactiveToPublishTest',100,0],['VerifyShortCourseFemalePendingToPublish',100,0],['VerifyShortCourseFemalePublishToFutureTest',100,0],['VerifyShortCourseFemalePublishToInactive',100,0],['VerifyShortCourseMaleInactiveToPublishTest',100,0],['VerifyShortCourseMalePendingToPublish',100,0],['VerifyShortCourseMalePublishToFutureTest',100,0],['VerifyShortCourseMalePublishToInactive',100,0]]);var options = { title : 'Passed/Failed tests', vAxis: {title: 'TestName'},  hAxis: {title: 'Number, %'}, chartArea: {width: '50%'}, isStacked: true }; var chart = new google.visualization.BarChart(document.getElementById('TestMethodName_chart_div'));  chart.draw(TestMethodName_data, options); } google.setOnLoadCallback(drawChart); </script>   
+        <script type='text/javascript'>  
+                google.charts.load('current', {'packages':['corechart']});
+      
+                google.charts.setOnLoadCallback(drawChart);
+                  function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                      ['Task', 'Hours per Day'],
+                      ['Automated test cases',     200],
+                      ['Not automated test cases',      80]
+                    ]);
+
+                    var options = {
+                      title: 'Automated test cases'
+                    };
+
+                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                 chart.draw(data, options);
+      } </script>   
+        <script type='text/javascript'>  
+                    google.load('visualization', '1', {packages: ['corechart', 'bar']});</script>
+  
+                    <script type='text/javascript'>  
+                    function drawChart() {         
+                    var data = google.visualization.arrayToDataTable([['CategoryName', 'NumberOfPassedTest', 'NumberOfFailedTest'],['AdminRoleAdminRole',73,26],['SecuritySecurity',82,17],['RatingState',100,0],['ShourtCourse',100,0],['EighteenHole',100,0],['ResetRating',100,0],['Search',100,0],['Snapshot',100,0],['NineHoles',100,0],['ApplyChanges',100,0],['SharedFacility',100,0],['NineHole',100,0],['Recalculation',100,0],['RejectChanges',100,0]]);var options = { title : 'Passed/Failed tests', vAxis: {title: 'CategoryName'},  hAxis: {title: 'Number, %'}, chartArea: {width: '50%'}, isStacked: true }; var chart = new google.visualization.BarChart(document.getElementById('TestCategory_chart_div'));  chart.draw(data, options); } google.setOnLoadCallback(drawChart); </script>   
+
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        <div id="TotalTestNumber_chart_div" style="width: 2000px; height: 800px;"></div>
+        <div id="TestMethodName_chart_div" style="width: 2000px; height: 3000px;"></div>   
+        <div id="TestCategory_chart_div" style="width: 2000px; height: 3000px;"></div>   
+     </div>

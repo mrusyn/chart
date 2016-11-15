@@ -6,17 +6,31 @@ using System.Text;
 
 namespace WorkingwithGooglecharts
 {
+    using System.ComponentModel;
+    using System.IO;
+    using System.Net;
+    using System.Web.UI;
+
     public partial class HelperCharts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+          
             if (!Page.IsPostBack)
             {
                 BindChart_TestCategory();
                 BindChart_TestMethodName();
                 BindChart_TotalTestNumber();
                 BindChart_TestAutomated();
+
             }
+
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter w = new HtmlTextWriter(sw);
+            d.RenderControl(w);
+
+            string s = sw.GetStringBuilder().ToString();
+            System.IO.File.WriteAllText("D:\\ReportImpl\\report.html", s);
         }
 
         private void BindGvData()
@@ -33,7 +47,7 @@ namespace WorkingwithGooglecharts
 
             try
             {
-
+         
                 TestCategory_dsChartData = GetChartData_TestCategory();
 
                 TestCategory_strScript.Append(@"<script type='text/javascript'>  
@@ -141,9 +155,16 @@ namespace WorkingwithGooglecharts
 
                 TotalTestNumber_ltScripts.Text = TotalTestNumber_strScript.ToString();
 
+
+               
+
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine("=============================");
+                Console.WriteLine("Message = {0}", ex.Message);
+                Console.WriteLine("Source = {0}", ex.Source);
+                Console.WriteLine("StackTrace = {0}", ex.StackTrace);
             }
             finally
             {
