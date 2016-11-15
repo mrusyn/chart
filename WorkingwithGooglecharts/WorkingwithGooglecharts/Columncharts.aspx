@@ -11,8 +11,6 @@
      <div runat="server" id="d">
         <script type="text/javascript" src="http://www.google.com/jsapi"></script>  
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        
-  
         <br />  
         <br />  
         <asp:Literal ID="TotalTestNumber_ltScripts" runat="server"></asp:Literal>    

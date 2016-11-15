@@ -3,14 +3,11 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.IO;
+using System.Web.UI;
 
 namespace WorkingwithGooglecharts
 {
-    using System.ComponentModel;
-    using System.IO;
-    using System.Net;
-    using System.Web.UI;
-
     public partial class HelperCharts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -31,12 +28,6 @@ namespace WorkingwithGooglecharts
 
             string s = sw.GetStringBuilder().ToString();
             System.IO.File.WriteAllText("D:\\ReportImpl\\report.html", s);
-        }
-
-        private void BindGvData()
-        {
-            gvData.DataSource = GetChartData();
-            gvData.DataBind();
         }
 
         private void BindChart_TestCategory()
@@ -71,8 +62,12 @@ namespace WorkingwithGooglecharts
                 TestCategory_strScript.Append(" </script>");
                 TestCategory_ltScripts.Text = TestCategory_strScript.ToString();
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine("=============================");
+                Console.WriteLine("Message = {0}", ex.Message);
+                Console.WriteLine("Source = {0}", ex.Source);
+                Console.WriteLine("StackTrace = {0}", ex.StackTrace);
             }
             finally
             {
@@ -113,8 +108,12 @@ namespace WorkingwithGooglecharts
                 TestMethodName_strScript.Append(" </script>");
                 TestMethodName_ltScripts.Text = TestMethodName_strScript.ToString();
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine("=============================");
+                Console.WriteLine("Message = {0}", ex.Message);
+                Console.WriteLine("Source = {0}", ex.Source);
+                Console.WriteLine("StackTrace = {0}", ex.StackTrace);
             }
             finally
             {
@@ -206,8 +205,12 @@ namespace WorkingwithGooglecharts
                 TestAutomated_ltScripts.Text = TestAutomated_strScript.ToString();
 
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine("=============================");
+                Console.WriteLine("Message = {0}", ex.Message);
+                Console.WriteLine("Source = {0}", ex.Source);
+                Console.WriteLine("StackTrace = {0}", ex.StackTrace);
             }
             finally
             {
@@ -232,9 +235,12 @@ namespace WorkingwithGooglecharts
 
                 sqlCon.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                Console.WriteLine("=============================");
+                Console.WriteLine("Message = {0}", ex.Message);
+                Console.WriteLine("Source = {0}", ex.Source);
+                Console.WriteLine("StackTrace = {0}", ex.StackTrace);
             }
             return dsData.Tables[0];
 
@@ -254,9 +260,12 @@ namespace WorkingwithGooglecharts
 
                 sqlCon.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                Console.WriteLine("=============================");
+                Console.WriteLine("Message = {0}", ex.Message);
+                Console.WriteLine("Source = {0}", ex.Source);
+                Console.WriteLine("StackTrace = {0}", ex.StackTrace);
             }
             return dsData.Tables[0];
 
@@ -279,9 +288,12 @@ namespace WorkingwithGooglecharts
 
                 sqlCon.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                Console.WriteLine("=============================");
+                Console.WriteLine("Message = {0}", ex.Message);
+                Console.WriteLine("Source = {0}", ex.Source);
+                Console.WriteLine("StackTrace = {0}", ex.StackTrace);
             }
             return dsData.Tables[0];
         }
