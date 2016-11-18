@@ -21,15 +21,23 @@ namespace WorkingwithGooglecharts
                 BindChart_TestAutomated();
 
             }
-
+          
             StringWriter sw = new StringWriter();
             HtmlTextWriter w = new HtmlTextWriter(sw);
             d.RenderControl(w);
 
             string s = sw.GetStringBuilder().ToString();
-            System.IO.File.WriteAllText("D:\\ReportImpl\\report.html", s);
+
+
+            string fileName = "report.html";
+
+            string path = @"~\ReportHTML\" + fileName;
+            System.IO.File.WriteAllText(path, s);
         }
 
+        /// <summary>  
+        /// This method helps to create column chart of Test Categories Name data to the number of pass/fail test cases
+        /// </summary>  
         private void BindChart_TestCategory()
         {
 
@@ -76,6 +84,9 @@ namespace WorkingwithGooglecharts
             }
         }
 
+        /// <summary>  
+        /// This method helps to create column chart of Test Method Name data to the number of pass/fail test cases
+        /// </summary>   
         private void BindChart_TestMethodName()
         {
 
@@ -122,6 +133,10 @@ namespace WorkingwithGooglecharts
             }
         }
 
+
+        /// <summary>  
+        /// This method helps to create column chart of total test due to the date
+        /// </summary> 
         private void BindChart_TotalTestNumber()
         {
             DataTable TotalTestNumber_dsChartData = new DataTable();
@@ -173,6 +188,9 @@ namespace WorkingwithGooglecharts
             }
         }
 
+        /// <summary>  
+        /// This method helps to create pie chart of automated and not automated test cases
+        /// </summary> 
         private void BindChart_TestAutomated()
         {
             
@@ -198,7 +216,7 @@ namespace WorkingwithGooglecharts
                  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
                  chart.draw(data, options);
-      }");
+                }");
                 
                 TestAutomated_strScript.Append(" </script>");
 
@@ -220,7 +238,10 @@ namespace WorkingwithGooglecharts
             }
         }
 
-
+        /// <summary>  
+        /// This method helps to get data from data base
+        /// </summary> 
+        /// <returns>DataTable</returns>  
         private DataTable GetChartData_TestMethodName()
         {
             DataSet dsData = new DataSet();
@@ -246,6 +267,10 @@ namespace WorkingwithGooglecharts
 
         }
 
+        /// <summary>  
+        /// This method helps to get data from data base
+        /// </summary> 
+        /// <returns>DataTable</returns>  
         private DataTable GetChartData_TestCategory()
         {
             DataSet dsData = new DataSet();
@@ -268,7 +293,6 @@ namespace WorkingwithGooglecharts
                 Console.WriteLine("StackTrace = {0}", ex.StackTrace);
             }
             return dsData.Tables[0];
-
         }
 
         
