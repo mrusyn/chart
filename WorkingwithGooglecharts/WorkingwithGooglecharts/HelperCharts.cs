@@ -31,7 +31,8 @@ namespace WorkingwithGooglecharts
 
             string fileName = "report.html";
 
-            string path = @"~\ReportHTML\" + fileName;
+             string path = AppDomain.CurrentDomain.BaseDirectory + "\\ReportHTML\\" + fileName;
+             
             System.IO.File.WriteAllText(path, s);
         }
 
